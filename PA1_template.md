@@ -69,9 +69,9 @@ median(steps.per.day)
 ## [1] 10395
 ```
 
-Ignoring missing values (i.e. NAs), the average (or **mean**) number of steps taken per day is 9354.23.
+Ignoring missing values (i.e. NAs), the average (or **mean**) number of steps taken per day is 9354.2295082.
 
-Again, ignoring missing values (i.e. NAs), the **median** number of steps taken per day is 10395.
+Again, ignoring missing values (i.e. NAs), the **median** number of steps taken per day is 1.0395 &times; 10<sup>4</sup>.
 
 ## What is the average daily activity pattern?
 Following is a plot of the average number of steps taken during during the intervals in a given day.
@@ -162,9 +162,9 @@ median(new.totals)
 ## [1] 10766.19
 ```
 
-The new **mean** number of steps taken per day is 10766.19.
+The new **mean** number of steps taken per day is 1.0766189 &times; 10<sup>4</sup>.
 
-The new **median** number of steps taken per day's 10766.19.
+The new **median** number of steps taken per day's 1.0766189 &times; 10<sup>4</sup>.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 

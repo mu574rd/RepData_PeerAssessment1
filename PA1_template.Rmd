@@ -25,9 +25,9 @@ mean(steps.per.day)
 median(steps.per.day) 
 ```
 
-Ignoring missing values (i.e. NAs), the average (or **mean**) number of steps taken per day is `r format(mean(steps.per.day))`.
+Ignoring missing values (i.e. NAs), the average (or **mean**) number of steps taken per day is `r mean(steps.per.day)`.
 
-Again, ignoring missing values (i.e. NAs), the **median** number of steps taken per day is `r format(median(steps.per.day))`.
+Again, ignoring missing values (i.e. NAs), the **median** number of steps taken per day is `r median(steps.per.day)`.
 
 ## What is the average daily activity pattern?
 Following is a plot of the average number of steps taken during during the intervals in a given day.
@@ -55,7 +55,7 @@ nrow(data)
 # Number of Observations without valid values
 sum(is.na(data$steps))
 ```
-The total number of observations in the data set is `r format(nrow(data))`. Of these, `r format(sum(is.na(data$steps)))` contain missing values (i.e. NAs) for the number of steps taken.
+The total number of observations in the data set is `r nrow(data)`. Of these, `r sum(is.na(data$steps))` contain missing values (i.e. NAs) for the number of steps taken.
 
 Observations with missing value are replaced by the average number of steps in the observations with valid values in that interval. A new data set is created to include the missing values.
 
@@ -87,9 +87,9 @@ median(new.totals)
 
 ```
 
-The new **mean** number of steps taken per day is `r format(mean(new.data.date$steps))`.
+The new **mean** number of steps taken per day is `r mean(new.totals)`.
 
-The new **median** number of steps taken per day's `r format(median(new.data.date$steps))`.
+The new **median** number of steps taken per day's `r median(new.totals)`.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
