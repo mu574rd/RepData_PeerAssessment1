@@ -74,7 +74,8 @@ new.data$steps <- mapply(no.ma, new.data$steps, new.data$interval)
 
 
 
-The following is a histogram of the total number of steps per day using imputed values for missing values.
+The following histogram represents the total number of steps per day using the missing values.
+
 ```{r}
 new.totals <- tapply(new.data$steps, new.data$date, FUN=sum)
 hist(new.totals,
@@ -93,7 +94,8 @@ The new **median** number of steps taken per day's `r median(new.totals)`.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-In order to identify any differences in activity patterns in a day of the week, one mus create a new variable, in this case defined as "Day", which indicates whether a set of observations are reported for weekdays or day of the weekend.
+In order to identify any differences in activity patterns in a day of the week, one must create a new variable, in this case defined as "Day", which indicates whether a set of observations are reported for weekdays or day of the weekend.
+
 ``` {r}
 new.data$date <- as.POSIXlt(new.data$date,format="%Y-%m-%d")
 new.data$day <- "Weekday"

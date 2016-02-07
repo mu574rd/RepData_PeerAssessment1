@@ -319,7 +319,7 @@ new.data &lt;- data
 new.data$steps &lt;- mapply(no.ma, new.data$steps, new.data$interval)
 </code></pre>
 
-<p>The following is a histogram of the total number of steps per day using imputed values for missing values.</p>
+<p>The following histogram represents the total number of steps per day using the missing values.</p>
 
 <pre><code class="r">new.totals &lt;- tapply(new.data$steps, new.data$date, FUN=sum)
 hist(new.totals,
@@ -348,7 +348,7 @@ hist(new.totals,
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
-<p>In order to identify any differences in activity patterns in a day of the week, one mus create a new variable, in this case defined as &ldquo;Day&rdquo;, which indicates whether a set of observations are reported for weekdays or day of the weekend.</p>
+<p>In order to identify any differences in activity patterns in a day of the week, one must create a new variable, in this case defined as &ldquo;Day&rdquo;, which indicates whether a set of observations are reported for weekdays or day of the weekend.</p>
 
 <pre><code class="r">new.data$date &lt;- as.POSIXlt(new.data$date,format=&quot;%Y-%m-%d&quot;)
 new.data$day &lt;- &quot;Weekday&quot;
@@ -360,7 +360,13 @@ new.data$day [weekdays(new.data$date) %in% c(&quot;Saturday&quot;,&quot;Sunday&q
 <pre><code class="r">steps.pattern &lt;- aggregate(steps~interval + day, data=new.data, mean)
 
 library(ggplot2)
-plot &lt;- ggplot(data = steps.pattern, aes(x=interval,y=steps)) 
+</code></pre>
+
+<pre><code>## Find out what&#39;s changed in ggplot2 at
+## http://github.com/hadley/ggplot2/releases.
+</code></pre>
+
+<pre><code class="r">plot &lt;- ggplot(data = steps.pattern, aes(x=interval,y=steps)) 
 plot + geom_line() + facet_wrap(~day,nrow=2)
 </code></pre>
 
